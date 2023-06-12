@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core'
+    'core',
+    'usuarios'
 ]
 
 MIDDLEWARE = [
@@ -119,9 +120,11 @@ USE_TZ = True
 STATIC_URL = 'static/'  # usado enqunto esta desenvolvimento
 STATIC_ROOT = Path.joinpath(BASE_DIR, 'staticfiles') # usando durante a produçao
 MEDIA_URL = 'media/'
-MEDIA_ROOT = Path.join(BASE_DIR, 'media')
+MEDIA_ROOT = Path(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'usuarios.CustomUsuario'
